@@ -1,0 +1,58 @@
+{
+    "name": "orumad/laravel-spanish-validator",
+    "description": "Laraver validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers",
+    "keywords": [
+        "orumad",
+        "laravel validation rules",
+        "laravel",
+        "laravel package",
+        "laravel validator"
+    ],
+    "homepage": "https://github.com/orumad/laravel-spanish-validator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Muñoz",
+            "email": "dev@danielmunoz.io",
+            "homepage": "https://danielmunoz.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "globalcitizen/php-iban": "^2.6",
+        "illuminate/support": "^5.7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.7",
+        "phpunit/phpunit": "^8.0",
+        "scrutinizer/ocular": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orumad\\SpanishValidator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orumad\\SpanishValidator\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Orumad\\SpanishValidator\\SpanishValidatorServiceProvider"
+            ],
+            "aliases": {
+                "SpanishValidator": "Orumad\\SpanishValidator\\Facades\\SpanishValidator"
+            }
+        }
+    }
+}
