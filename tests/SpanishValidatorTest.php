@@ -130,7 +130,7 @@ class SpanishValidatorTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse($this->validator->isValidIban('ES5915221496277518114051'));
         $this->assertFalse($this->validator->isValidIban('ES06a3127 5991 1947 2388 4544'));
         $this->assertFalse($this->validator->isValidIban('ES88 0211 6656 9861 76818444 '));
-        $this->assertFalse($this->validator->isValidIban(' - '));
+        $this->assertFalse($this->validator->isValidIban('ES88'));
     }
 
     /** @test */
