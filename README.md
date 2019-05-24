@@ -1,4 +1,4 @@
-# Laraver validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers 
+# Laravel validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-validation-rules.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-validation-rules)
 [![Code coverage](https://scrutinizer-ci.com/g/spatie/laravel-validation-rules/badges/coverage.png)](https://scrutinizer-ci.com/g/spatie/laravel-validation-rules)

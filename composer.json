@@ -1,6 +1,6 @@
 {
     "name": "orumad/laravel-spanish-validator",
-    "description": "Laraver validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers",
+    "description": "Laravel validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers",
     "keywords": [
         "orumad",
         "laravel validation rules",
