@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/orumad/laravel-spanish-validator.svg?style=flat-square)](https://packagist.org/packages/orumad/laravel-spanish-validator)
 [![Code coverage](https://scrutinizer-ci.com/g/orumad/laravel-spanish-validator/badges/coverage.png)](https://scrutinizer-ci.com/g/orumad/laravel-spanish-validator)
-[![Build Status](https://img.shields.io/travis/orumad/laravel-spanish-validator/master.svg?style=flat-square)](https://travis-ci.org/orumad/laravel-spanish-validator)
+[![Build Status](https://travis-ci.org/orumad/laravel-spanish-validator.svg?branch=master)](https://travis-ci.org/orumad/laravel-spanish-validator)
 [![StyleCI](https://github.styleci.io/repos/152587206/shield?branch=master)](https://github.styleci.io/repos/152587206)
 [![Quality Score](https://img.shields.io/scrutinizer/g/orumad/laravel-spanish-validator.svg?style=flat-square)](https://scrutinizer-ci.com/g/orumad/laravel-spanish-validator)
 [![Total Downloads](https://img.shields.io/packagist/dt/orumad/laravel-spanish-validator.svg?style=flat-square)](https://packagist.org/packages/orumad/laravel-spanish-validator)
