@@ -1,4 +1,4 @@
-# Laraver validator for various spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code 
+# Laraver validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-validation-rules.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-validation-rules)
 [![Code coverage](https://scrutinizer-ci.com/g/spatie/laravel-validation-rules/badges/coverage.png)](https://scrutinizer-ci.com/g/spatie/laravel-validation-rules)
@@ -18,6 +18,7 @@ Also the package include validators for:
 
 - **IBAN**: International Bank Account Number.
 - **Postal codes**: Spanish postal codes.
+- **Phone number**: Spanish phone numbers format.
 
 
 The package can be installed via composer:
@@ -43,123 +44,23 @@ The package will automatically register itself.
 
 ### `NIF`
 
-Determine if the user is authorized to perform an ability on an instance of the given model. The id of the model is the field under validation 
-
-Consider the following policy:
-
-```php
-class ModelPolicy
-{
-    use HandlesAuthorization;
-
-    public function edit(User $user, Model $model): bool
-    {
-        return $model->user->id === $user->id;
-    }
-}
-```
-
-This validation rule will pass if the id of the logged in user matches the `user_id` on `TestModel` who's it is in the `model_id` key of the request.
-
-```php
-// in a `FormRequest`
-
-public function rules()
-{
-    return [
-        'model_id' => [new Authorized('edit', TestModel::class)],
-    ];
-}
-```
-
-### `CountryCode`
-
-Determine if the field under validation is a valid ISO3166 country code.
-
-```php
-// in a `FormRequest`
-
-public function rules()
-{
-    return [
-        'country' => ['required', new Country()],
-    ];
-}
-```
-
-If you want to validate a nullable country code field, you can call the `nullable()` method on the `CountryCode` rule. This way `null` and `0` are also passing values:
-
-```php
-// in a `FormRequest`
-
-public function rules()
-{
-    return [
-        'country' => [(new Country())->nullable()],
-    ];
-}
-```
-
-### `Enum`
-
-This rule will validate if the value under validation is part of the given enum class. We assume that the enum class has a static `toArray` method that returns all valid values. If you're looking for a good enum class, take a look at [myclabs/php-enum](https://github.com/myclabs/php-enum);
-
-Consider the following enum class:
-
-```php
-class UserRole extends MyCLabs\Enum\Enum
-{
-    const ADMIN = 'admin';
-    const REVIEWER = 'reviewer';
-}
-```
-
-The `Enum` rule can be used like this:
-
-```php
-// in a `FormRequest`
-
-public function rules()
-{
-    return [
-        'role' => [new Enum(UserRole::class)],
-    ];
-}
-```
-
-The request will only be valid if `role` contains `ADMIN` or `REVIEWER`.
-
-### `ModelsExist`
-
-Determine if all of the values in the input array exist as attributes for the given model class. 
-
-By default the rule assumes that you want to validate using `id` attribute. In the example below the validation will pass if all `model_ids` exist for the `Model`.
+Determine if the input is a valid _"Número de Identificación Fiscal"_ (tax number for individuals).
 
 
-```php
-// in a `FormRequest`
+### `NIE`
 
-public function rules()
-{
-    return [
-        'model_ids' => ['array', new ModelsExist(Model::class)],
-    ];
-}
-```
+Determine if the field under validation is a valid _"Número de Idenfiticación para Extranjeros"_ (identity number for foreigners).
 
 
-You can also pass an attribute name as the second argument. In the example below the validation will pass if there are users for each email given in the `user_emails` of the request.
+### `CIF`
 
-```php
-// in a `FormRequest`
+This rule will validate if the input field is a valid _"Código de Identificación Fiscal"_ (tax number for companies).
 
-public function rules()
-{
-    return [
-        'user_emails' => ['array', new ModelsExist(User::class, 'emails')],
-    ];
-}
-```
+
+### `Spanish Tax Number`
+
+This rule validates if the input is a valid spanish tax number: NIF or NIE or CIF.
+
 
 ### Testing
 
