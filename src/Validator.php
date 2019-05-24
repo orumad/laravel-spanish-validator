@@ -16,10 +16,10 @@ class Validator
     {
         $regEx = '/^[0-9]{8}[A-Z]$/i';
 
-        $letters = "TRWAGMYFPDXBNJZSQVHLCKE";
+        $letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
         if (preg_match($regEx, $value)) {
-            return ($letters[(substr($value, 0, 8) % 23)] == $value[8]);
+            return $letters[(substr($value, 0, 8) % 23)] == $value[8];
         }
 
         return false;
@@ -28,12 +28,12 @@ class Validator
     public function isValidNie($value)
     {
         $regEx = '/^[KLMXYZ][0-9]{7}[A-Z]$/i';
-        $letters = "TRWAGMYFPDXBNJZSQVHLCKE";
+        $letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
         if (preg_match($regEx, $value)) {
             $replaced = str_replace(['X', 'Y', 'Z'], [0, 1, 2], $value);
 
-            return ($letters[(substr($replaced, 0, 8) % 23)] == $value[8]);
+            return $letters[(substr($replaced, 0, 8) % 23)] == $value[8];
         }
 
         return false;
@@ -66,16 +66,16 @@ class Validator
                 }
             }
 
-            $sum3 = (intval($sum1 + $sum2)) . '';
+            $sum3 = (intval($sum1 + $sum2)).'';
             $sum4 = (10 - intval($sum3[strlen($sum3) - 1])) % 10;
 
-            $letters = "JABCDEFGHI";
+            $letters = 'JABCDEFGHI';
 
-            if ($digit >= "0" && $digit <= "9") {
-                return ($digit == $sum4);
+            if ($digit >= '0' && $digit <= '9') {
+                return $digit == $sum4;
             }
 
-            return (strtoupper($digit) == $letters[$sum4]);
+            return strtoupper($digit) == $letters[$sum4];
         }
 
         return false;
@@ -95,7 +95,7 @@ class Validator
                 if ($num2 < 10000000) {
                     $num4 = $num2 + $num1 * 10000000;
                 } else {
-                    $num4 = $num1 . $num2;
+                    $num4 = $num1.$num2;
                 }
                 $validacion = $num4 % 97;
 
@@ -119,13 +119,13 @@ class Validator
     {
         $regEx = '/^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/i';
 
-        return (preg_match($regEx, $value) === 1);
+        return preg_match($regEx, $value) === 1;
     }
 
     public function isValidPhone($value)
     {
         $regEx = '/^[9|8|6|7][0-9]{8}$/i';
 
-        return (preg_match($regEx, $value) === 1);
+        return preg_match($regEx, $value) === 1;
     }
 }
