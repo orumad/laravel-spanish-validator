@@ -42,24 +42,45 @@ The package will automatically register itself.
 - [`spanish_phone`](#spanish_phone)
 
 
-### `NIF`
+### `nif`
 
 Determine if the input is a valid _"Número de Identificación Fiscal"_ (tax number for individuals).
 
 
-### `NIE`
+### `nie`
 
 Determine if the field under validation is a valid _"Número de Idenfiticación para Extranjeros"_ (identity number for foreigners).
 
 
-### `CIF`
+### `cif`
 
 This rule will validate if the input field is a valid _"Código de Identificación Fiscal"_ (tax number for companies).
 
 
-### `Spanish Tax Number`
+### `spanish_tax_number`
 
 This rule validates if the input is a valid spanish tax number: NIF or NIE or CIF.
+
+
+### `nss`
+
+Determine if the field under validation is a valid "Número de la Seguridad Social"_ (national security number).
+
+
+### `iban`
+
+Test if the input field is a valid IBAN bank account number. _(This uses the package `globalcitizen/php-iban` to check the validity of IBAN)_ 
+
+
+### `spanish_postal_code`
+
+Will check if the postal code is a valid spanish postal code.
+
+
+### `spanish_phone`
+
+This tule validates if the input field content is a valid spanish phone number format.
+
 
 
 ### Testing
