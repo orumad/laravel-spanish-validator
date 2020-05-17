@@ -12,6 +12,13 @@ class Validator
             $this->isValidCif($value);
     }
 
+    public function isValidPersonalId($value)
+    {
+        return
+            $this->isValidNif($value) or
+            $this->isValidNie($value);
+    }
+
     public function isValidNif($value)
     {
         $regEx = '/^[0-9]{8}[A-Z]$/i';

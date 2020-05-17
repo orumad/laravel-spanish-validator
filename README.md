@@ -35,6 +35,7 @@ The package will automatically register itself.
 - [`nie`](#nie)
 - [`cif`](#cif)
 - [`spanish_tax_number`](#spanish_tax_number)
+- [`spanish_personal_id`](#spanish_personal_id)
 - [`nss`](#nss)
 - [`iban`](#iban)
 - [`spanish_postal_code`](#spanish_postal_code)
@@ -59,6 +60,11 @@ This rule will validate if the input field is a valid _"C√≥digo de Identificaci√
 ### `spanish_tax_number`
 
 This rule validates if the input is a valid spanish tax number: NIF or NIE or CIF.
+
+
+### `spanish_personal_id`
+
+Will validate if the input is a valid personal id number in Spain (NIF or NIE).
 
 
 ### `nss`

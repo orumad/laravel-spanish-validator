@@ -27,6 +27,12 @@ class SpanishValidatorServiceProvider extends ServiceProvider
             return __('spanishValidator.tax_number');
         });
 
+        // Personal ID: NIF or NIE
+        Validator::extend('spanish_personal_id', 'Orumad\\SpanishValidator\\InternalValidator@validatePersonalId');
+        Validator::replacer('spanish_personal_id', function ($message, $attribute, $rule, $parameters) {
+            return __('spanishValidator.personal_id');
+        });
+
         // NIF
         Validator::extend('nif', 'Orumad\\SpanishValidator\\InternalValidator@validateNif');
         Validator::replacer('nif', function ($message, $attribute, $rule, $parameters) {

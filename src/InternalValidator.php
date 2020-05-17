@@ -16,6 +16,11 @@ class InternalValidator
         return $this->validator->isValidTaxNumber($value);
     }
 
+    public function validatePersonalId($attribute, $value, $parameters, $validator)
+    {
+        return $this->validator->isValidPersonalId($value);
+    }
+
     public function validateNif($attribute, $value, $parameters, $validator)
     {
         return $this->validator->isValidNif($value);

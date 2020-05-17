@@ -94,6 +94,26 @@ class SpanishValidatorTest extends \PHPUnit\Framework\TestCase
     }
 
     /** @test */
+    public function is_a_valid_spanish_personal_id_number()
+    {
+        $this->assertTrue($this->validator->isValidPersonalId('67662178L'));
+        $this->assertTrue($this->validator->isValidPersonalId('Y4712444B'));
+        $this->assertTrue($this->validator->isValidPersonalId('09376604X'));
+        $this->assertTrue($this->validator->isValidPersonalId('Z8546192H'));
+        $this->assertTrue($this->validator->isValidPersonalId('26459827Y'));
+    }
+
+    /** @test */
+    public function is_not_a_valid_spanish_personal_id_number()
+    {
+        $this->assertFalse($this->validator->isValidPersonalId('A46391553'));
+        $this->assertFalse($this->validator->isValidPersonalId('X5487401D'));
+        $this->assertFalse($this->validator->isValidPersonalId('B46390553'));
+        $this->assertFalse($this->validator->isValidPersonalId('21321012S'));
+        $this->assertFalse($this->validator->isValidPersonalId(null));
+    }
+
+    /** @test */
     public function is_a_valid_nss()
     {
         $this->assertTrue($this->validator->isValidNss('087894806929'));
