@@ -20,6 +20,8 @@ Also the package include validators for:
 - **Phone number**: Spanish phone numbers format.
 
 
+## Instalation
+
 The package can be installed via composer:
 
 ```bash
@@ -27,6 +29,12 @@ composer require orumad/laravel-spanish-validator
 ```
 
 The package will automatically register itself.
+
+If you want to edit the validation messages, you should run the following command to publish the translation files into your `resources/lang` folder:
+
+```bash
+php artisan vendor:publish --provider="Orumad\SpanishValidator\SpanishValidatorServiceProvider"
+```
 
 
 ## Available rules
