@@ -13,17 +13,17 @@ class SpanishValidatorServiceProvider extends ServiceProvider
         // Laravel >= 9 - lang folder at /lang
         if (file_exists(base_path('lang/'))) {
             $this->publishes([
-                __DIR__ . '/../resources/lang' => base_path('lang/'),
+                __DIR__.'/../resources/lang' => base_path('lang/'),
             ]);
 
             $this->loadTranslationsFrom(base_path('lang/'), 'spanishValidator');
         } else {
             // Laravel < 9 - lang folder at /resources/lang
             $this->publishes([
-                __DIR__ . '/../resources/lang' => resource_path('lang/'),
+                __DIR__.'/../resources/lang' => resource_path('lang/'),
             ]);
 
-            $this->loadTranslationsFrom(__DIR__ . '/../resources/lang/', 'spanishValidator');
+            $this->loadTranslationsFrom(__DIR__.'/../resources/lang/', 'spanishValidator');
         }
 
 
