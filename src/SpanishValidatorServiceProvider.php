@@ -26,8 +26,6 @@ class SpanishValidatorServiceProvider extends ServiceProvider
             $this->loadTranslationsFrom(__DIR__.'/../resources/lang/', 'spanishValidator');
         }
 
-
-
         // Add validators and messages
         $this->addValidators();
     }
