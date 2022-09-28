@@ -9,11 +9,22 @@ class SpanishValidatorServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/'),
-        ]);
 
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang/', 'spanishValidator');
+        // Laravel >= 9 - lang folder at /lang
+        if (file_exists(base_path('lang/'))) {
+            $this->publishes([
+                __DIR__.'/../resources/lang' => base_path('lang/'),
+            ]);
+
+            $this->loadTranslationsFrom(base_path('lang/'), 'spanishValidator');
+        } else {
+            // Laravel < 9 - lang folder at /resources/lang
+            $this->publishes([
+                __DIR__.'/../resources/lang' => resource_path('lang/'),
+            ]);
+
+            $this->loadTranslationsFrom(__DIR__.'/../resources/lang/', 'spanishValidator');
+        }
 
         // Add validators and messages
         $this->addValidators();

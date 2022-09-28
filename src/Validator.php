@@ -25,6 +25,8 @@ class Validator
 
         $letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
+        $value = strtoupper($value);
+
         if (preg_match($regEx, $value)) {
             return $letters[(substr($value, 0, 8) % 23)] == $value[8];
         }
@@ -36,6 +38,8 @@ class Validator
     {
         $regEx = '/^[KLMXYZ][0-9]{7}[A-Z]$/i';
         $letters = 'TRWAGMYFPDXBNJZSQVHLCKE';
+
+        $value = strtoupper($value);
 
         if (preg_match($regEx, $value)) {
             $replaced = str_replace(['X', 'Y', 'Z'], [0, 1, 2], $value);
@@ -51,6 +55,8 @@ class Validator
         $regEx1 = '/^[ABEH][0-9]{8}$/i';
         $regEx2 = '/^[KPQS][0-9]{7}[A-J]$/i';
         $regEx3 = '/^[CDFGJLMNRUVW][0-9]{7}[0-9A-J]$/i';
+
+        $value = strtoupper($value);
 
         if (preg_match($regEx1, $value) ||
             preg_match($regEx2, $value) ||
