@@ -28,7 +28,7 @@ class Validator
         $value = strtoupper($value);
 
         if (preg_match($regEx, $value)) {
-            return $letters[(substr($value, 0, 8) % 23)] == $value[8];
+            return $letters[substr($value, 0, 8) % 23] == $value[8];
         }
 
         return false;
@@ -44,7 +44,7 @@ class Validator
         if (preg_match($regEx, $value)) {
             $replaced = str_replace(['X', 'Y', 'Z'], [0, 1, 2], $value);
 
-            return $letters[(substr($replaced, 0, 8) % 23)] == $value[8];
+            return $letters[substr($replaced, 0, 8) % 23] == $value[8];
         }
 
         return false;
@@ -79,7 +79,7 @@ class Validator
                 }
             }
 
-            $sum3 = (intval($sum1 + $sum2)).'';
+            $sum3 = intval($sum1 + $sum2).'';
             $sum4 = (10 - intval($sum3[strlen($sum3) - 1])) % 10;
 
             $letters = 'JABCDEFGHI';

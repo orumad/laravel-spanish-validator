@@ -9,7 +9,6 @@ class SpanishValidatorServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-
         // Laravel >= 9 - lang folder at /lang
         if (file_exists(base_path('lang/'))) {
             $this->publishes([
