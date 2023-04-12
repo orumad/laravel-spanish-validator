@@ -1,8 +1,8 @@
-# Laravel validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers 
+# Laravel validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/orumad/laravel-spanish-validator.svg?style=flat-square)](https://packagist.org/packages/orumad/laravel-spanish-validator)
-[![Build Status](https://travis-ci.org/orumad/laravel-spanish-validator.svg?branch=master)](https://travis-ci.org/orumad/laravel-spanish-validator)
-[![StyleCI](https://github.styleci.io/repos/184770182/shield?branch=master)](https://github.styleci.io/repos/184770182)
+[![Build Status](https://travis-ci.org/orumad/laravel-spanish-validator.svg?branch=main)](https://travis-ci.org/orumad/laravel-spanish-validator)
+[![StyleCI](https://github.styleci.io/repos/184770182/shield?branch=main)](https://github.styleci.io/repos/184770182)
 [![Quality Score](https://img.shields.io/scrutinizer/g/orumad/laravel-spanish-validator.svg?style=flat-square)](https://scrutinizer-ci.com/g/orumad/laravel-spanish-validator)
 [![Total Downloads](https://img.shields.io/packagist/dt/orumad/laravel-spanish-validator.svg?style=flat-square)](https://packagist.org/packages/orumad/laravel-spanish-validator)
 
@@ -82,7 +82,7 @@ Determine if the field under validation is a valid "Número de la Seguridad Soci
 
 ### `iban`
 
-Test if the input field is a valid IBAN bank account number. _(This uses the package `globalcitizen/php-iban` to check the validity of IBAN)_ 
+Test if the input field is a valid IBAN bank account number. _(This uses the package `globalcitizen/php-iban` to check the validity of IBAN)_
 
 
 ### `spanish_postal_code`
