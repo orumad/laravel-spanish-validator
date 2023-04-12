@@ -5,7 +5,9 @@ All notable changes to `laravel-spanish-identity-validator` will be documented i
 
 ## 1.3.0 - 2023-04-12
 
-- Upgrade to Laravel 10.0
+- Upgrade to Laravel 10 and PHP 8.2.
+- Fix [issue #5](https://github.com/orumad/laravel-spanish-validator/issues/5).
+- Fix tests and added code coverage.
 
 
 ## 1.2.0 - 2022-02-24
@@ -13,7 +15,7 @@ All notable changes to `laravel-spanish-identity-validator` will be documented i
 - Upgrade to PHP 8.0 and Laravel 9.0
 
 
-## 1.1.2 - 2020-05-17q
+## 1.1.2 - 2020-05-17
 
 - Update to Laravel 8.0
 - Fix StyleCI and build passes after upgrade to Laravel 8
