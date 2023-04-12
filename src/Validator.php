@@ -135,6 +135,7 @@ class Validator
     {
         if ($value) {
             $iban = new IBAN();
+
             return $iban->Verify($value);
         }
 
@@ -145,6 +146,7 @@ class Validator
     {
         if ($value) {
             $regEx = '/^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/i';
+
             return preg_match($regEx, $value) === 1;
         }
 
@@ -155,6 +157,7 @@ class Validator
     {
         if ($value) {
             $regEx = '/^[9|8|6|7][0-9]{8}$/i';
+
             return preg_match($regEx, $value) === 1;
         }
 
