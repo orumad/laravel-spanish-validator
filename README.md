@@ -1,7 +1,6 @@
 # Laravel validator for spanish stuff: NIF, NIE, CIF, NSS, IBAN, Postal Code, Phone numbers
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/orumad/laravel-spanish-validator.svg?style=flat-square)](https://packagist.org/packages/orumad/laravel-spanish-validator)
-[![Build Status](https://travis-ci.org/orumad/laravel-spanish-validator.svg?branch=main)](https://travis-ci.org/orumad/laravel-spanish-validator)
 [![StyleCI](https://github.styleci.io/repos/184770182/shield?branch=main)](https://github.styleci.io/repos/184770182)
 [![Quality Score](https://img.shields.io/scrutinizer/g/orumad/laravel-spanish-validator.svg?style=flat-square)](https://scrutinizer-ci.com/g/orumad/laravel-spanish-validator)
 [![Total Downloads](https://img.shields.io/packagist/dt/orumad/laravel-spanish-validator.svg?style=flat-square)](https://packagist.org/packages/orumad/laravel-spanish-validator)
