@@ -2,6 +2,9 @@
 
 All notable changes to `laravel-spanish-identity-validator` will be documented in this file
 
+## 1.4.0 - 2024-04-02
+
+- Upgrade to Laravel 11.
 
 ## 1.3.0 - 2023-04-12
 

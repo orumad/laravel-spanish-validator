@@ -19,13 +19,13 @@
         }
     ],
     "require": {
-        "php": "^8.0|^8.1|^8.2",
+        "php": "^8.2",
         "globalcitizen/php-iban": "^4.2",
-        "illuminate/support": "^10.0"
+        "illuminate/support": "^11.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^11.0",
         "scrutinizer/ocular": "master-dev"
     },
     "autoload": {
