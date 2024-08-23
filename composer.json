@@ -9,6 +9,7 @@
         "laravel validator"
     ],
     "homepage": "https://github.com/orumad/laravel-spanish-validator",
+    "version": "1.4.0",
     "license": "MIT",
     "authors": [
         {
@@ -20,7 +21,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "globalcitizen/php-iban": "^4.2",
+        "globalcitizen/php-iban": "^4.2.3",
         "illuminate/support": "^11.0"
     },
     "require-dev": {
