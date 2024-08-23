@@ -6,7 +6,7 @@ return [
     'nif' => 'This is not a valid NIF.',
     'nie' => 'This is not a valid NIE.',
     'cif' => 'This is not a valid CIF.',
-    'nss'=> 'This is not a valid NSS.',
+    'nss' => 'This is not a valid NSS.',
     'iban' => 'This is not a valid IBAN.',
     'spanish_postal_code' => 'The postal code is not valid.',
     'spanish_phone' => 'Is not a valid spanih phone number.',
