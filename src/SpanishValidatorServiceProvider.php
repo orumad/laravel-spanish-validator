@@ -2,6 +2,7 @@
 
 namespace Orumad\SpanishValidator;
 
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 
@@ -9,24 +10,36 @@ class SpanishValidatorServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Laravel >= 9 - lang folder at /lang
-        if (file_exists(base_path('lang/'))) {
-            $this->publishes([
-                __DIR__.'/../resources/lang' => base_path('lang/'),
-            ]);
+        // Get the path for publish the lang files
+        $publishPath = $this->getLangPath();
 
-            $this->loadTranslationsFrom(base_path('lang/'), 'spanishValidator');
-        } else {
-            // Laravel < 9 - lang folder at /resources/lang
-            $this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/'),
-            ]);
+        // Publish the lang files
+        $this->publishes([
+            __DIR__.'/../resources/lang' => $publishPath,
+        ], 'lang');
 
-            $this->loadTranslationsFrom(__DIR__.'/../resources/lang/', 'spanishValidator');
-        }
+        // Load the lang files
+        $this->loadTranslationsFrom($publishPath, 'spanishValidator');
+        Lang::addNamespace('spanishValidator', __DIR__.'/../resources/lang');
 
         // Add validators and messages
         $this->addValidators();
+    }
+
+    private function getLangPath()
+    {
+        // Laravel >= 9
+        if ($this->isLaravel9OrHigher()) {
+            return lang_path('vendor/spanishvalidator');
+        }
+
+        // Laravel < 9
+        return resource_path('lang/vendor/spanishvalidator');
+    }
+
+    private function isLaravel9OrHigher()
+    {
+        return version_compare(app()->version(), '9.0', '>=');
     }
 
     private function addValidators()
@@ -34,13 +47,13 @@ class SpanishValidatorServiceProvider extends ServiceProvider
         // Tax Number: NIF or NIE or CIF
         Validator::extend('spanish_tax_number', 'Orumad\\SpanishValidator\\InternalValidator@validateTaxNumber');
         Validator::replacer('spanish_tax_number', function ($message, $attribute, $rule, $parameters) {
-            return __('spanishValidator::spanishValidator.tax_number');
+            return __('spanishValidator::spanishValidator.spanish_tax_number');
         });
 
         // Personal ID: NIF or NIE
         Validator::extend('spanish_personal_id', 'Orumad\\SpanishValidator\\InternalValidator@validatePersonalId');
         Validator::replacer('spanish_personal_id', function ($message, $attribute, $rule, $parameters) {
-            return __('spanishValidator::spanishValidator.personal_id');
+            return __('spanishValidator::spanishValidator.spanish_personal_id');
         });
 
         // NIF
@@ -76,13 +89,13 @@ class SpanishValidatorServiceProvider extends ServiceProvider
         // Postal Code
         Validator::extend('spanish_postal_code', 'Orumad\\SpanishValidator\\InternalValidator@validatePostalCode');
         Validator::replacer('spanish_postal_code', function ($message, $attribute, $rule, $parameters) {
-            return __('spanishValidator::spanishValidator.postal_code');
+            return __('spanishValidator::spanishValidator.spanish_postal_code');
         });
 
         // Phone
         Validator::extend('spanish_phone', 'Orumad\\SpanishValidator\\InternalValidator@validatePhone');
         Validator::replacer('spanish_phone', function ($message, $attribute, $rule, $parameters) {
-            return __('spanishValidator::spanishValidator.phone');
+            return __('spanishValidator::spanishValidator.spanish_phone');
         });
     }
 }
